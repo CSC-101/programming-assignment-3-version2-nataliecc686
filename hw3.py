@@ -21,8 +21,7 @@ def population_by_education(lst: list[data.CountyDemographics], education_level:
         if education_level in county.education:
             multiplier = county.education[education_level] / 100
             total_population += multiplier * county.population["2014 Population"]
-        else:
-            total_population = 0
+
     return total_population
 
 def population_by_ethnicity(lst: list[data.CountyDemographics], ethnicity: str) -> float:
@@ -31,8 +30,7 @@ def population_by_ethnicity(lst: list[data.CountyDemographics], ethnicity: str) 
         if ethnicity in county.ethnicities:
             multiplier = county.ethnicities[ethnicity] / 100
             total_population += multiplier * county.population["2014 Population"]
-        else:
-            total_population = 0
+
     return total_population
 
 def population_below_poverty_level(lst: list[data.CountyDemographics]) -> float:
@@ -41,9 +39,37 @@ def population_below_poverty_level(lst: list[data.CountyDemographics]) -> float:
         if 'Persons Below Poverty Level' in county.income:
             multiplier = county.income['Persons Below Poverty Level'] / 100
             total_population += multiplier * county.population["2014 Population"]
-        else:
-            total_population = 0
+
     return total_population
+
+
+#Part 4:
+def percent_by_education(lst: list[data.CountyDemographics], education_level: str) -> float:
+    total_population = population_total(lst)
+    percentage_population = 0
+    if total_population == 0:
+        return 0
+    else:
+        percentage_population = (population_by_education(lst, education_level) / total_population) * 100
+        return percentage_population
+
+def percent_by_ethnicity(lst: list[data.CountyDemographics], ethnicity: str) -> float:
+    total_population = population_total(lst)
+    percentage_population = 0
+    if total_population == 0:
+        return 0
+    else:
+        percentage_population = (population_by_ethnicity(lst, ethnicity) / total_population) * 100
+        return percentage_population
+
+def percent_below_poverty_level(lst: list[data.CountyDemographics]) -> float:
+    total_population = population_total(lst)
+    percentage_population = 0
+    if total_population == 0:
+        return 0
+    else:
+        percentage_population = (population_below_poverty_level(lst) / total_population) * 100
+
 
 
 
