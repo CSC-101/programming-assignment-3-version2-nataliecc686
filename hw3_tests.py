@@ -2,6 +2,7 @@ import data
 import build_data
 import unittest
 
+import hw3
 
 # These two values are defined to support testing below. The
 # data within these structures should not be modified. Doing
@@ -180,26 +181,65 @@ class TestCases(unittest.TestCase):
 
     # Part 1
     # test population_total
+    def test_population_total1(self):
+        self.assertEqual(hw3.population_total(full_data), 318857056)
+
+    def test_population_total2(self):
+        self.assertEqual(hw3.population_total(reduced_data), 655813)
+
 
     # Part 2
     # test filter_by_state
+    def test_filter_by_state1(self):
+        filtered_counties = hw3.filter_by_state(full_data, 'CA')
+        self.assertEqual(len(filtered_counties), 58)
+
+    def test_filter_by_state2(self):
+        filtered_counties = hw3.filter_by_state(reduced_data, 'CA')
+        self.assertEqual(len(filtered_counties), 2)
+
+
 
     # Part 3
     # test population_by_education
+
+
     # test population_by_ethnicity
+
+
     # test population_below_poverty_level
+
+
+
 
     # Part 4
     # test percent_by_education
+
+
     # test percent_by_ethnicity
+
+
     # test percent_below_poverty_level
+
+
+
 
     # Part 5
     # test education_greater_than
+
+
     # test education_less_than
+
+
     # test ethnicity_greater_than
+
+
     # test ethnicity_less_than
+
+
     # test below_poverty_level_greater_than
+
+
     # test below_poverty_level_less_than
 
 
