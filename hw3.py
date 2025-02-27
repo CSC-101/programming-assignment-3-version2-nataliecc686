@@ -69,7 +69,54 @@ def percent_below_poverty_level(lst: list[data.CountyDemographics]) -> float:
         return 0
     else:
         percentage_population = (population_below_poverty_level(lst) / total_population) * 100
+        return percentage_population
 
+
+#Part 5
+def education_greater_than(lst: list[data.CountyDemographics], education_level: str, threshold: float) -> list[data.CountyDemographics]:
+    county_list = []
+
+    for county in lst:
+        if percent_by_education(lst, education_level) > threshold:
+            county_list.append(county)
+    return county_list
+def education_less_than(lst: list[data.CountyDemographics], education_level: str, threshold: float) -> list[data.CountyDemographics]:
+    county_list = []
+
+    for county in lst:
+        if percent_by_education(lst, education_level) < threshold:
+            county_list.append(county)
+    return county_list
+
+def ethnicity_greater_than(lst: list[data.CountyDemographics], ethnicity: str, threshold: float) -> list[data.CountyDemographics]:
+    county_list = []
+
+    for county in lst:
+        if percent_by_ethnicity(lst, ethnicity) > threshold:
+            county_list.append(county)
+    return county_list
+def ethnicity_less_than(lst: list[data.CountyDemographics], ethnicity: str, threshold: float) -> list[data.CountyDemographics]:
+    county_list = []
+
+    for county in lst:
+        if percent_by_ethnicity(lst, ethnicity) < threshold:
+            county_list.append(county)
+    return county_list
+
+def below_poverty_level_greater_than(lst: list[data.CountyDemographics], threshold: float) -> list[data.CountyDemographics]:
+    county_list = []
+
+    for county in lst:
+        if percent_below_poverty_level(lst) > threshold:
+            county_list.append(county)
+    return county_list
+def below_poverty_level_less_than(lst: list[data.CountyDemographics], threshold: float) -> list[data.CountyDemographics]:
+    county_list = []
+
+    for county in lst:
+        if percent_below_poverty_level(lst) < threshold:
+            county_list.append(county)
+    return county_list
 
 
 

@@ -187,6 +187,10 @@ class TestCases(unittest.TestCase):
     def test_population_total2(self):
         self.assertEqual(hw3.population_total(reduced_data), 655813)
 
+    def test_population_total3(self):
+        filtered_counties = hw3.filter_by_state(reduced_data, 'CA')
+        self.assertEqual(hw3.population_total(filtered_counties), 486673)
+
 
     # Part 2
     # test filter_by_state
@@ -202,25 +206,49 @@ class TestCases(unittest.TestCase):
 
     # Part 3
     # test population_by_education
-
+    def test_population_by_education1(self):
+        filtered_counties = hw3.filter_by_state(reduced_data, 'ID')
+        self.assertAlmostEqual(hw3.population_by_education(filtered_counties, "Bachelor's Degree or Higher"), 469.338)
+    def test_population_by_education2(self):
+        filtered_counties = hw3.filter_by_state(reduced_data, 'MO')
+        self.assertAlmostEqual(hw3.population_by_education(filtered_counties, "High School or Higher"), 34540.05)
 
     # test population_by_ethnicity
-
+    def test_population_by_ethnicity1(self):
+        filtered_counties = hw3.filter_by_state(reduced_data, 'MO')
+        self.assertAlmostEqual(hw3.population_by_ethnicity(filtered_counties, 'Two or More Races'), 802.275)
+    def test_population_by_ethnicity2(self):
+        filtered_counties = hw3.filter_by_state(reduced_data, 'MO')
+        self.assertAlmostEqual(hw3.population_by_ethnicity(filtered_counties, 'White Alone'), 39227.025)
 
     # test population_below_poverty_level
-
+    def test_population_below_poverty_level1(self):
+        filtered_counties = hw3.filter_by_state(reduced_data, 'MO')
+        self.assertAlmostEqual(hw3.population_below_poverty_level(filtered_counties), 7769.4)
+    def test_population_below_poverty_level2(self):
+        filtered_counties = hw3.filter_by_state(reduced_data, 'ID')
+        self.assertAlmostEqual(hw3.population_below_poverty_level(filtered_counties), 411.654)
 
 
 
     # Part 4
     # test percent_by_education
-
+    def test_percent_by_education1(self):
+        self.assertAlmostEqual(hw3.percent_by_education(reduced_data, "Bachelor's Degree or Higher"), 29.751482663503165)
+    def test_percent_by_education2(self):
+        self.assertAlmostEqual(hw3.percent_by_education(reduced_data, 'High School or Higher'), 86.39108526363461)
 
     # test percent_by_ethnicity
-
+    def test_percent_by_ethnicity1(self):
+        self.assertAlmostEqual(hw3.percent_by_ethnicity(reduced_data, "White Alone"), 84.49632090245237)
+    def test_percent_by_ethnicity2(self):
+        self.assertAlmostEqual(hw3.percent_by_ethnicity(reduced_data, "Two or More Races"), 3.6007140755062803)
 
     # test percent_below_poverty_level
-
+    def test_percent_below_poverty_level1(self):
+        self.assertAlmostEqual(hw3.percent_below_poverty_level(reduced_data), 16.424150481920915)
+    def test_percent_below_poverty_level2(self):
+        self.assertAlmostEqual(hw3.percent_below_poverty_level(full_data), 15.366286413307403)
 
 
 
