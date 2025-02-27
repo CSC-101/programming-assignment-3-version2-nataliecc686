@@ -234,19 +234,19 @@ class TestCases(unittest.TestCase):
     # Part 4
     # test percent_by_education
     def test_percent_by_education1(self):
-        self.assertAlmostEqual(hw3.percent_by_education(reduced_data, "Bachelor's Degree or Higher"), 29.751482663503165)
+        self.assertAlmostEqual(hw3.percent_by_education(reduced_data, "Bachelor's Degree or Higher"), 29.75148266)
     def test_percent_by_education2(self):
-        self.assertAlmostEqual(hw3.percent_by_education(reduced_data, 'High School or Higher'), 86.39108526363461)
+        self.assertAlmostEqual(hw3.percent_by_education(reduced_data, 'High School or Higher'), 86.39108526)
 
     # test percent_by_ethnicity
     def test_percent_by_ethnicity1(self):
-        self.assertAlmostEqual(hw3.percent_by_ethnicity(reduced_data, "White Alone"), 84.49632090245237)
+        self.assertAlmostEqual(hw3.percent_by_ethnicity(reduced_data, "White Alone"), 84.4963209)
     def test_percent_by_ethnicity2(self):
-        self.assertAlmostEqual(hw3.percent_by_ethnicity(reduced_data, "Two or More Races"), 3.6007140755062803)
+        self.assertAlmostEqual(hw3.percent_by_ethnicity(reduced_data, "Two or More Races"), 3.60071407)
 
     # test percent_below_poverty_level
     def test_percent_below_poverty_level1(self):
-        self.assertAlmostEqual(hw3.percent_below_poverty_level(reduced_data), 16.424150481920915)
+        self.assertAlmostEqual(hw3.percent_below_poverty_level(reduced_data), 16.42415048)
     def test_percent_below_poverty_level2(self):
         self.assertAlmostEqual(hw3.percent_below_poverty_level(full_data), 15.3662864)
 
