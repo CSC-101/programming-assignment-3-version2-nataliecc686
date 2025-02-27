@@ -248,7 +248,7 @@ class TestCases(unittest.TestCase):
     def test_percent_below_poverty_level1(self):
         self.assertAlmostEqual(hw3.percent_below_poverty_level(reduced_data), 16.424150481920915)
     def test_percent_below_poverty_level2(self):
-        self.assertAlmostEqual(hw3.percent_below_poverty_level(full_data), 15.366286413307403)
+        self.assertAlmostEqual(hw3.percent_below_poverty_level(full_data), 15.3662864)
 
 
 
