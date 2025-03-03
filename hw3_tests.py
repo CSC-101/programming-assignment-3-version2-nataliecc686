@@ -180,7 +180,7 @@ class TestCases(unittest.TestCase):
     pass
 
     # Part 1
-    # test population_total
+    # tests for population_total
     def test_population_total1(self):
         self.assertEqual(hw3.population_total(full_data), 318857056)
 
@@ -193,7 +193,7 @@ class TestCases(unittest.TestCase):
 
 
     # Part 2
-    # test filter_by_state
+    # tests for filter_by_state
     def test_filter_by_state1(self):
         filtered_counties = hw3.filter_by_state(full_data, 'CA')
         self.assertEqual(len(filtered_counties), 58)
@@ -205,7 +205,7 @@ class TestCases(unittest.TestCase):
 
 
     # Part 3
-    # test population_by_education
+    # tests for population_by_education
     def test_population_by_education1(self):
         filtered_counties = hw3.filter_by_state(reduced_data, 'ID')
         self.assertAlmostEqual(hw3.population_by_education(filtered_counties, "Bachelor's Degree or Higher"), 469.338)
@@ -213,7 +213,7 @@ class TestCases(unittest.TestCase):
         filtered_counties = hw3.filter_by_state(reduced_data, 'MO')
         self.assertAlmostEqual(hw3.population_by_education(filtered_counties, "High School or Higher"), 34540.05)
 
-    # test population_by_ethnicity
+    # tests for population_by_ethnicity
     def test_population_by_ethnicity1(self):
         filtered_counties = hw3.filter_by_state(reduced_data, 'MO')
         self.assertAlmostEqual(hw3.population_by_ethnicity(filtered_counties, 'Two or More Races'), 802.275)
@@ -221,7 +221,7 @@ class TestCases(unittest.TestCase):
         filtered_counties = hw3.filter_by_state(reduced_data, 'MO')
         self.assertAlmostEqual(hw3.population_by_ethnicity(filtered_counties, 'White Alone'), 39227.025)
 
-    # test population_below_poverty_level
+    # tests for population_below_poverty_level
     def test_population_below_poverty_level1(self):
         filtered_counties = hw3.filter_by_state(reduced_data, 'MO')
         self.assertAlmostEqual(hw3.population_below_poverty_level(filtered_counties), 7769.4)
@@ -232,19 +232,19 @@ class TestCases(unittest.TestCase):
 
 
     # Part 4
-    # test percent_by_education
+    # tests for percent_by_education
     def test_percent_by_education1(self):
         self.assertAlmostEqual(hw3.percent_by_education(reduced_data, "Bachelor's Degree or Higher"), 29.75148266)
     def test_percent_by_education2(self):
         self.assertAlmostEqual(hw3.percent_by_education(reduced_data, 'High School or Higher'), 86.39108526)
 
-    # test percent_by_ethnicity
+    # tests for percent_by_ethnicity
     def test_percent_by_ethnicity1(self):
         self.assertAlmostEqual(hw3.percent_by_ethnicity(reduced_data, "White Alone"), 84.4963209)
     def test_percent_by_ethnicity2(self):
         self.assertAlmostEqual(hw3.percent_by_ethnicity(reduced_data, "Two or More Races"), 3.60071407)
 
-    # test percent_below_poverty_level
+    # tests for percent_below_poverty_level
     def test_percent_below_poverty_level1(self):
         self.assertAlmostEqual(hw3.percent_below_poverty_level(reduced_data), 16.42415048)
     def test_percent_below_poverty_level2(self):
